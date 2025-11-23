@@ -1,0 +1,59 @@
+<div class="page-container">
+  <h1 class="title">Einstellungen</h1>
+
+  <div class="scrollable-container">
+
+    <!-- Feld für Profil --> 
+    <div class="settings-entry" >
+      <app-gear-symbol></app-gear-symbol>
+      <div class="text">
+        <div class="name">Profil</div>
+        <div class="description">Benutzderdaten bearbeiten</div>
+      </div>
+
+      <app-green-button (click)="navigateToProfile()"></app-green-button>
+    </div>
+
+    <!-- Feld für Zahlungsmethoden -->
+    <div class="settings-entry payment-entry">
+     <app-gear-symbol></app-gear-symbol>
+      <div class="text">
+        <div class="name">Zahlungsmethoden</div>
+        <div class="description">Zahlungsoptionen auswählen</div>
+      </div>
+      <app-green-button (click)="navigateToPayment()"></app-green-button>
+      
+    </div>
+
+    <!-- Feld für Optionen -->
+    <div class="settings-entry">
+      <app-gear-symbol></app-gear-symbol>
+      <div class="text">
+        <div class="name">Optionen</div>
+        <div class="description">Anzeige Optionen auswählen</div>
+      </div>
+      <app-green-button (click)="navigateToOptions()"></app-green-button>
+    </div>
+
+     <!-- Feld für Statistiken -->
+     <div class="settings-entry">
+      <app-gear-symbol></app-gear-symbol>
+      <div class="text">
+        <div class="name">Statistiken</div>
+        <div class="description">Nutzer-statistiken einsehen</div>
+      </div>
+      <app-green-button (click)="navigateToStatistics()"></app-green-button> 
+    </div>
+
+    <div class="bottom">
+      <app-button color="accent" class="logout-btn" (click)="logout()">
+        Abmelden
+      </app-button>
+
+      <div class="info about" routerLink="/about">
+        <span class="material-icons icon-outlined">waving_hand</span>
+        <a> Über uns </a>
+      </div>
+    </div>
+  </div>
+</div>

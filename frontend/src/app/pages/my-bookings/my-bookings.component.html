@@ -1,0 +1,17 @@
+<div class="page-container">
+    <h1 class="title">Meine Buchungen</h1>
+    <div class="scrollable-container">
+        <div class="current-bookings">
+                <h2 class="sub-title">Aktuelle Buchungen</h2>
+            <app-booking-item *ngFor="let booking of currentBookings" [booking]="booking" type="current"></app-booking-item>
+        </div>
+        <div class="past-bookings">
+                <h2 class="sub-title">Vergangene Buchungen</h2>
+            <app-booking-item *ngFor="let booking of pastBookings" [booking]="booking" type="past"></app-booking-item>
+       
+            <!-- Ladebildschirm anzeigen, wenn isLoading true ist -->
+            <app-loading-screen *ngIf="isLoading" [transparent]="false"></app-loading-screen>
+          
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<div class="container" [ngClass]="{'invalid-input': !isValidInput}" [style.height.px]="containerHeight"
+  [style.overflow]="containerOverflow">
+  <p class="label">{{ label }}</p>
+  <input [type]="type" [(ngModel)]="text" (ngModelChange)="onTextChange()" (blur)="onBlur()" [readonly]="readonly" />
+  <small *ngIf="!isValidInput" class="error-message">{{errormessage}}</small>
+</div>

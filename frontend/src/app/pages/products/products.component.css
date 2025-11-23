@@ -1,0 +1,402 @@
+:host {
+  --header-height: 80px;
+}
+
+.logo.title {
+  /* "Lokale" Styles können "Globale" Styles überschreiben */
+  font-size: 25px;
+  align-items: center;
+}
+
+.product-container {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.product-header {
+  position: relative;
+  padding: 20px;
+  padding-top: 45px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  min-height: var(--header-height);
+  width: 100%;
+}
+
+.back-btn {
+  margin-top: 50px;
+  margin-right: 50px; /* Increased spacing between the icon and the text */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* Die beiden Definition sind für lange Scooternamen */
+#scootertitel {
+  flex: 1;
+  margin-right: 40px; /* Abstand zum Back-Button */
+  margin-left: 40px;
+}
+
+#back-button {
+  flex-shrink: 0;
+}
+
+.whitespace {
+  display: flex;
+  width: 100%;
+  height: 338px;
+  background: white;
+  position: flex; /* Make the container a positioning context */
+}
+
+.technical-data-layout {
+  flex: 1;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Change from space-around to flex-start */
+  gap: 29px; /* Adjust this value to reduce space between elements */
+  position: relative; /* Make this a positioning context for price-tag */
+}
+
+.batterie-layout,
+.reichweite-layout,
+.geschwindigkeit-layout {
+  display: flex;
+  align-items: center;
+  height: 65px;
+}
+
+.progress-circle {
+  font-family: "Racing Sans One";
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-circle circle {
+  fill: none;
+  stroke-width: 2;
+}
+
+.progress-circle .progress-value {
+  stroke: #00ff00;
+  stroke-dasharray: 182; /* Umfang vom Kreis */
+  stroke-dashoffset: calc(182 - (var(--percentage) * 1.82));
+  transform: rotate(0deg);
+  transform-origin: center;
+}
+
+.progress-circle-battery::before {
+  content: attr(data-percentage);
+  position: absolute;
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+}
+.progress-circle-reichweite::before {
+  content: attr(data-percentage);
+  position: absolute;
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+}
+.progress-circle-geschwindigkeit::before {
+  text-align: center;
+  content: attr(speed);
+  position: absolute;
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+}
+
+.price-tag {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: green;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.actualpic {
+  flex: 0 0 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.scooter-pic {
+  margin-top: 45px;
+  scale: 1.2;
+  padding: 5px;
+  width: 100%;
+}
+
+.average-rating {
+  font-size: 24px;
+  color: #97fb64;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  align-items: center;
+  flex-direction: row;
+}
+
+.anzahl-bewertung {
+  font-family: "Racing Sans One";
+  font-size: 14px;
+  color: #000;
+
+  text-align: center;
+}
+
+.batterie-layout,
+.reichweite-layout,
+.geschwindigkeit-layout {
+  display: flex;
+  align-items: center;
+}
+
+.batterie-bar {
+  float: left;
+  width: 50%;
+  padding: 3px;
+}
+
+.reichweite-bar {
+  float: left;
+  width: 50%;
+  padding: 3px;
+}
+
+.text {
+  margin-left: 20px;
+  color: black;
+  font-size: 15px;
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  word-wrap: break-word;
+  float: right;
+  width: 50%;
+  padding: 3px;
+  flex-grow: 1; /* Allows the text to take up the remaining space */
+}
+
+.geschwindkeit-bar {
+  float: left;
+  width: 50%;
+  padding: 3px;
+}
+
+.price-tag {
+  display: flex;
+  color: var(--Highlights, #97fb64);
+  font-family: "Racing Sans One";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px; /* 116.667% */
+  letter-spacing: -0.32px;
+
+  height: 26px;
+  border-radius: 15px;
+  padding: 0;
+  padding-right: 15px;
+
+  text-align: right;
+  text-justify: center;
+  border: 1px solid var(--Highlights-Stroke, #123800);
+  background: var(--Highlights-Stroke, #123800);
+}
+
+.progress-circle svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.banner {
+  padding-bottom: 20px;
+}
+
+.book-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 20px;
+}
+
+.book-btn {
+  scale: 0.8;
+  width: 70%;
+}
+
+/* Der grüne Balken */
+hr {
+  border: 1.2px solid rgb(11, 224, 11);
+  margin-left: 18px;
+  margin-right: 18px;
+}
+
+.description-content {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 30;
+  line-height: 29px;
+  letter-spacing: 0.32px;
+  text-align: left;
+  padding: 20px;
+}
+
+#standort-title {
+  margin-left: 20px;
+  margin-top: 40px;
+  font-size: large;
+  font-weight: bolder;
+}
+
+#map-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#map {
+  border-radius: 10px;
+  height: 350px;
+  width: 350px;
+  margin-bottom: 40px;
+}
+
+/***********Bewertungen***********/
+.review-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  margin-bottom: 100px;
+  height: auto;
+}
+
+.star_rating {
+  display: flex;
+  justify-content: center;
+  user-select: none;
+  margin-top: 15px;
+}
+
+.star {
+  font-size: 27.5px;
+  color: #97fb64;
+  background-color: unset;
+  border: none;
+}
+
+.comment {
+  margin-top: 10px;
+}
+
+.review-buttons {
+  display: flex;
+  justify-content: center;
+  padding-top: 12px;
+  padding-bottom: 30px;
+}
+
+.submit-button {
+  scale: 1.2;
+  border-color: #97fb64;
+  background-color: #194f65;
+  color: #97fb64;
+  border-radius: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  border: 1px;
+  border-style: solid;
+}
+
+/*war kürzer als die anderen im div Container, deshalb bisschen verlängert*/
+#hr-last {
+  margin-left: -27px;
+  margin-right: -27px;
+}
+
+#all-reviews {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  justify-content: flex-end;
+  padding: 20px;
+  margin-top: -20px;
+}
+
+h3 {
+  justify-content: center;
+  display: flex;
+  margin-bottom: -10px;
+}
+
+/* Scooter-Bewertungen anzeigen durch filter/sortierung*/
+
+.sub-title {
+  margin-top: 0;
+  font-size: larger;
+  text-align: center;
+  font-family: "Racing Sans One";
+}
+
+/* Zu dropdown element */
+.filter-sort-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+
+.dropdown-element {
+  float: right;
+}
+
+.review-item {
+  background-color: #fff;
+  border-radius: 15px;
+  height: auto;
+  width: 100%;
+  padding: 5px 0px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.overlay {
+  /* Damit der User auf beliebige Stelle anklicken kann außerhalb vom Dropdown Menü um dies zu schließen */
+  z-index: 0;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}

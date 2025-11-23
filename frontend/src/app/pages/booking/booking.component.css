@@ -1,0 +1,174 @@
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* weiße Box mit Scooterinfos */
+.image-container {
+  width: 100%;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  padding: 2%;
+  margin-bottom: 10%;
+  box-sizing: border-box;
+}
+
+.scooter-title {
+  font-size: 15px;
+  margin: 0;
+  color: black;
+  text-transform: uppercase;
+}
+
+.small-image {
+  width: 20%;
+  height: auto;
+  margin-right: 35px;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-size: 10px !important;
+  color: black !important;
+  font-style: italic;
+  font-weight: 300 !important;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: -4px;
+}
+
+.info-value {
+  font-size: 12px !important;
+  color: black;
+  margin-top: 0;
+  font-weight: 400;
+}
+
+.info-grid span {
+  font-size: 13px;
+  font-weight: bold;
+  color: black;
+  margin-top: 0;
+}
+
+/* Stundenwahl */
+.question {
+  font-size: 15px !important;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.hour-selection {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+::ng-deep #hours input {
+  text-align: center;
+  width: 70px;
+  font-size: 14px;
+  color: black;
+  border-color: black;
+}
+
+.unit {
+  font-size: 15px !important;
+  margin: -14px 0 0 10px;
+  color: white;
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: -14px;
+}
+
+
+.p-button-rounded {
+  background-color: transparent !important;
+  border: 2px solid white;
+  color: white !important;
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
+.p-button-text {
+  box-shadow: none !important;
+  margin: 0 1px;
+}
+
+/* Preis */
+.total-price {
+  margin-top: 15px;
+  margin-bottom: 50px;
+  margin-left: 2px;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: left;
+}
+
+
+/* Buchung-bestätigen- und Abbrechen-Button */
+.bottom {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  gap: 10px; 
+  margin-top: 20px;
+}
+
+::ng-deep .bottom app-button {
+  width: 168px !important; 
+}
+
+::ng-deep .bottom app-button button {
+  font-size: 13px !important; 
+  width: 100% !important; 
+  height: 35px;
+  white-space: nowrap; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; 
+  line-height: 35px; 
+}
+
+

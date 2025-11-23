@@ -1,0 +1,62 @@
+<div class="review-item" *ngIf="review">
+
+    <!-- Name des Users, Datum -->
+    <div class="review-header" *ngIf="review.User">
+        <div class="review-user">
+            <span class="material-symbols-outlined"> account_circle </span>
+            <p id="name">{{ review.User.firstName }} {{ getFormattedLastName(review.User.lastName) }}</p>
+            <div class="review-date">
+                {{ review.date | date: 'dd.MM.yyyy' }}
+            </div>
+        </div>
+        <hr class="separator">
+    </div>
+
+    <!-- Sterne -->
+    <div class="review-stars">
+        <span *ngFor="let star of [1, 2, 3, 4, 5]" (click)="setRating(star)">
+            {{ star <= (editing ? rating : review.valuation) ? '★' : '☆' }}
+        </span>
+    </div>
+
+    <!-- Text -->
+    <div class="review-text" *ngIf="!editing">
+        <p>{{ review.text }}</p>
+    </div>
+    <div class="review-text" *ngIf="editing">
+        <textarea [(ngModel)]="reviewText" #autosizeTextarea (input)="adjustTextareaHeight()"></textarea>
+    </div>
+
+    <!-- Buttonleiste am unteren Rand -->
+   <div class="edit-and-like-buttons">
+    <span class="material-symbols-outlined" id="edit-icon" [ngClass]="{'save-icon': editing}" *ngIf="review.userId === currentUserId" (click)="toggleEdit()">
+        {{ editing ? 'save' : 'border_color' }}
+    </span>
+    <span class="material-symbols-outlined" id="delete-icon" *ngIf="review.userId === currentUserId && !editing" (click)="deleteReview()">
+        delete
+    </span>
+    <span class="material-symbols-outlined" id="cancel-icon" *ngIf="review.userId === currentUserId && editing" (click)="cancelEdit()">
+        cancel
+    </span>
+    <div class="thumb-up-container">
+        <span class="edited-label" *ngIf="review.edited">(bearbeitet)</span>
+        <span class="material-symbols-outlined" id="thumb-up" 
+            [ngClass]="{'liked': liked}"
+            (click)="likeReview()">thumb_up</span>
+        <span id="helpful-count" [ngClass]="{'liked-count': liked}">{{ review.helpfulCounter }}</span>
+    </div>
+</div>
+
+ <!-- Toast für erfolgreiche Änderung der Bewertung und Confirm-Dialog für das Löschen -->
+ <div class="toast-container">
+    <app-toast [message]="toastMessage" [isSuccess]="isSuccess" [duration]="toastDuration"></app-toast>
+  </div>
+  <app-confirm-dialog 
+    [visible]="showConfirmDialog" 
+    header="Bestätigung" 
+    message="Möchten Sie Ihre Bewertung wirklich löschen?" 
+    (confirm)="confirmDeleteReview()" 
+    (cancel)="cancelDeleteReview()">
+  </app-confirm-dialog>
+  
+</div>

@@ -1,0 +1,203 @@
+<div class="product-container">
+  <div
+    class="overlay"
+    *ngIf="productService.showDropdown || productService.showStarFilter"
+    (click)="productService.showStarFilter = false"
+    (click)="productService.showDropdown = false"
+  ></div>
+  <!-- (click)="productService.showDropdown = false" -->
+  <div class="product-header">
+    <div id="scootertitel">
+      <h1 class="title logo">
+        {{ getProductDetails(scooter?.product)?.name }}
+      </h1>
+    </div>
+    <div id="back-button">
+      <span>
+        <app-back-button></app-back-button>
+      </span>
+    </div>
+  </div>
+
+  <div id="scooter" class="banner">
+    <div class="whitespace">
+      <div class="actualpic">
+        <img
+          class="scooter-pic"
+          [src]="getProductImgUrl()"
+          [alt]="product?.name"
+        />
+        <div class="average-rating">
+          <span *ngFor="let star of [1, 2, 3, 4, 5]">
+            {{ star <= averageRating ? "\u2605" : "\u2606" }}
+            <!--
+                "\u2605" ist "★" -> falls star <= averageRating
+                "\u2606" ist "☆" -> falls star > averageRating
+            -->
+          </span>
+        </div>
+        <div class="anzahl-bewertung">{{ numberOfReview }} Bewertungen</div>
+      </div>
+
+      <div class="technical-data-layout">
+        <div class="batterie-layout">
+          <b>
+            <div
+              class="progress-circle-battery progress-circle"
+              [ngStyle]="{ '--percentage': scooter?.battery }"
+              [attr.data-percentage]="getRoundedValue(scooter?.battery) + '%'"
+            >
+              <svg width="60" height="60">
+                <circle cx="30" cy="30" r="29" />
+                <circle class="progress-value" cx="30" cy="30" r="29" />
+              </svg>
+            </div>
+          </b>
+          <div class="text">Batteriestand</div>
+        </div>
+        <div class="reichweite-layout">
+          <div
+            class="progress-circle-reichweite progress-circle"
+            [ngStyle]="{
+              '--percentage': percentageOfMaxRange(
+                calculateReach(
+                  getRoundedValue(scooter?.battery),
+                  getProductDetails(scooter?.product)?.max_reach
+                )
+              )
+            }"
+            [attr.data-percentage]="getReachWithUnit(scooter)"
+          >
+            <svg width="60" height="60">
+              <circle cx="30" cy="30" r="29" />
+              <circle class="progress-value" cx="30" cy="30" r="29" />
+            </svg>
+          </div>
+          <div class="text">Reichweite</div>
+        </div>
+        <div class="geschwindigkeit-layout">
+          <div
+            class="progress-circle-geschwindigkeit progress-circle"
+            [ngStyle]="{
+              '--percentage': percentageOfMaxVelocity(
+                getProductDetails(scooter?.product)?.max_speed
+              )
+            }"
+            [attr.speed]="getSpeedWithUnit(getProductDetails(scooter?.product))"
+          >
+            <svg width="60" height="60">
+              <circle cx="30" cy="30" r="29" />
+              <circle class="progress-value" cx="30" cy="30" r="29" />
+            </svg>
+          </div>
+          <div class="text">Geschwindigkeit</div>
+        </div>
+        <!-- Durchschnittliche Sternebewertung -->
+
+        <div class="price-tag">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="34px"
+            fill="#97FB64"
+          >
+            <path
+              d="M856-390 570-104q-12 12-27 18t-30 6q-15 0-30-6t-27-18L103-457q-11-11-17-25.5T80-513v-287q0-33 23.5-56.5T160-880h287q16 0 31 6.5t26 17.5l352 353q12 12 17.5 27t5.5 30q0 15-5.5 29.5T856-390ZM513-160l286-286-353-354H160v286l353 354ZM260-640q25 0 42.5-17.5T320-700q0-25-17.5-42.5T260-760q-25 0-42.5 17.5T200-700q0 25 17.5 42.5T260-640Zm220 160Z"
+            />
+          </svg>
+          <div>{{ getPricePerHour(scooter?.product) }} / h</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="book-container" *ngIf="!cameFromBookingItem">
+    <app-button class="book-btn" color="primary" (click)="bookScooter()"
+      >Scooter buchen
+    </app-button>
+  </div>
+  <hr />
+  <div class="description-container">
+    <div
+      class="description-content"
+      [innerHTML]="product?.description_html"
+    ></div>
+  </div>
+  <hr />
+  <!---------Karte die den Standort des ausgewählten scooters zeigt------->
+  <h1 id="standort-title">Standort</h1>
+  <div id="map-container">
+    <div
+      id="map"
+      class="map"
+      leaflet
+      [leafletOptions]="options"
+      [(leafletCenter)]="center"
+      [leafletLayers]="layers"
+      (leafletClick)="onMapClick($event)"
+    ></div>
+  </div>
+  <hr />
+  <div class="review-container">
+    <div *ngIf="isActive">
+      <h3>Schreiben Sie eine Bewertung</h3>
+
+      <div class="star_rating">
+        <button class="star" (click)="rating = 1">
+          {{ rating >= 1 ? "\u2605" : "\u2606" }}
+        </button>
+        <button class="star" (click)="rating = 2">
+          {{ rating >= 2 ? "\u2605" : "\u2606" }}
+        </button>
+        <button class="star" (click)="rating = 3">
+          {{ rating >= 3 ? "\u2605" : "\u2606" }}
+        </button>
+        <button class="star" (click)="rating = 4">
+          {{ rating >= 4 ? "\u2605" : "\u2606" }}
+        </button>
+        <button class="star" (click)="rating = 5">
+          {{ rating >= 5 ? "\u2605" : "\u2606" }}
+        </button>
+      </div>
+
+      <div class="comment">
+        <app-comment-input [(text)]="reviewText"> </app-comment-input>
+      </div>
+      <div class="review-buttons">
+        <button class="submit-button" (click)="sendReview()">
+          Bewertung senden
+        </button>
+      </div>
+      <hr id="hr-last" />
+    </div>
+    <div id="all-reviews">
+      <h3>Bewertungen</h3>
+      <div class="filter-sort-container">
+        <app-star-filter
+          *ngIf="reviewExists"
+          class="filter-stars"
+          (starFilterChanged)="onFilterChanged($event)"
+        ></app-star-filter>
+        <app-dropdown
+          *ngIf="reviewExists"
+          class="dropdown-element"
+          (sortCriteriaChanged)="onSortCriteriaChanged($event)"
+        ></app-dropdown>
+      </div>
+      <div>
+        <app-review-item
+          *ngFor="let review of reviews"
+          [review]="review"
+          (reviewDeleted)="handleReviewDeleted($event)"
+        ></app-review-item>
+      </div>
+    </div>
+  </div>
+</div>
+<app-okay-dialog
+  [visible]="showDialog"
+  [header]="dialogHeader"
+  [message]="dialogMessage"
+  (cancel)="handleCancellation()"
+></app-okay-dialog>
+<app-toast></app-toast>

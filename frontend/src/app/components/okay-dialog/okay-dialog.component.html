@@ -1,0 +1,42 @@
+<div class="overlay" *ngIf="visible"></div>
+<div
+  [ngClass]="{
+    'dialog-container1': header === 'Ungültig!' || header === 'Fehler!',
+    'dialog-container2': header === 'Gesendet!'
+  }"
+  *ngIf="visible"
+>
+  <div class="dialog-content">
+    <div class="icon-container">
+      <div
+        *ngIf="header === 'Ungültig!' || header === 'Fehler!'"
+        class="material-icons icon-outlined icon error-icon"
+      >
+        cancel
+      </div>
+      <div
+        *ngIf="header === 'Gesendet!'"
+        class="material-icons icon-outlined icon success-icon"
+      >
+        check_circle
+      </div>
+    </div>
+    <div class="header-message">
+      <div>
+        <b
+          [ngClass]="{
+            header1: header === 'Ungültig!' || header === 'Fehler!',
+            header2: header === 'Gesendet!'
+          }"
+          >{{ header }}</b
+        >
+      </div>
+      <div>
+        <p class="dialog-message">{{ message }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="material-icons icon-outlined close-icon" (click)="onCancel()">
+    close
+  </div>
+</div>

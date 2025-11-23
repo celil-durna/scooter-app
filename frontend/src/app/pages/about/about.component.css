@@ -1,0 +1,13 @@
+#text {
+    font-size: 16px; 
+  }
+
+  .institution-container h4 {
+    margin-bottom: 8px; 
+}
+
+.institution-container div {
+    margin-bottom: 8px; 
+    line-height: 1 ;
+    font-size: 16px;
+}

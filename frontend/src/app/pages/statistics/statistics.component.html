@@ -1,0 +1,49 @@
+<div class="page-container">
+    <h1 class="title">Statistiken</h1>
+    <app-back-button class="back-button"></app-back-button>
+
+    <div class="entry">
+        <div class="dropdown-container">
+            <label for="stats-options">Filtern nach: </label>
+            <select id="stats-options" class="dropdown" (change)="onFilterChange($event)">
+                <option value="total">Alle Buchungen </option>
+                <option value="month">Letzter Monat</option>
+                <option value="week">Letzte Woche</option>
+                <option value="day">Letzter Tag</option>
+            </select>
+        </div>
+
+    <div class="scrollable-container">    
+    <div class="entry">
+        <div class="statistic-field">
+            <h2 class="stat-title">Anzahl Buchungen
+            </h2>
+            <div class="stat-value"> {{calculateTotalBookings(selectedFilter)}} </div>
+        </div>
+        <div class="statistic-field">
+            <h2 class="stat-title">Gesamte Fahrzeit</h2>
+            <div class="stat-value">{{roundValue(calculateTotalHours(selectedFilter))}} Stunden</div>
+        </div>
+        <div class="statistic-field">
+            <h2 class="stat-title">Gesamte Ausgaben</h2>
+            <div class="stat-value">{{getPricewithUnit(calculateTotalPrice(selectedFilter))}}</div>
+        </div>
+        <div class="statistic-field">
+            <h2 class="stat-title">Zurrückgelegte Distanz</h2>
+            <div class="stat-value">{{getDistancewithUnit(calculateTotalDistance(selectedFilter))}}</div>
+        </div>
+    </div>
+    <div class="sub-statistic-field">
+        <h3 class="sub-stat-title">Durchschnitts Fahrzeit</h3>
+        <div class="sub-stat-value"> {{roundValue(calculateAverageHours(calculateTotalBookings(selectedFilter),calculateTotalHours(selectedFilter)))}} Stunden</div>
+    </div>
+    <div class="sub-statistic-field">
+        <h3 class="sub-stat-title">Durchschnitts Ausgaben</h3>
+        <div class="sub-stat-value">{{getPricewithUnit(calculateAveragePrice(calculateTotalBookings(selectedFilter),calculateTotalPrice(selectedFilter)))}} </div>
+    </div>
+    <div class="sub-statistic-field">
+        <h3 class="sub-stat-title">Durchschnitts Fahrdistanz</h3>
+        <div class="sub-stat-value"> {{getDistancewithUnit(calculateAverageDistance(calculateTotalBookings(selectedFilter),calculateTotalDistance(selectedFilter)))}} </div>
+    </div>
+    </div>
+</div>

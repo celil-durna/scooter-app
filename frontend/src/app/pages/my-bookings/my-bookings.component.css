@@ -1,0 +1,23 @@
+.title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.sub-title {
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-left: 4px;
+    margin-bottom: 20px;
+}
+
+.current-bookings {
+    margin-bottom: 60px;
+}
+
+.scrollable-container {
+    max-height: 80vh; 
+    overflow-y: auto;
+}
+

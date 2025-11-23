@@ -1,0 +1,23 @@
+.green-button {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.green-button .green-circle {
+  background: #97fb64;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: scale(1.2);
+  border-radius: 9999px;
+  margin-bottom: 2px;
+}
+
+.green-button .icon {
+  color: #000;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: scale(1.2) rotate(-90deg);
+}

@@ -1,0 +1,37 @@
+.toast-container {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  display: flex;
+  justify-content: center;
+  z-index: 999; /* Falls erforderlich, um über anderen Elementen zu liegen */
+}
+
+.output-container {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px; /* etwas mehr Padding für bessere Darstellung */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schatten für besseren Kontrast */
+}
+
+.output-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.output-message {
+  text-align: center;
+  margin-top: 5px;
+  color: black; /* Standardfarbe für die Nachricht */
+}

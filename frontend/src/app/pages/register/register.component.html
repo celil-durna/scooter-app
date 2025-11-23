@@ -1,0 +1,77 @@
+<div class="page-container">
+  <h1 class="title">Neues Kundenkonto</h1>
+  <div class="scrollable-container">
+    <app-user-input
+      #nameInput
+      label="Vorname"
+      [(text)]="firstName"
+      [type]="'text'"
+    ></app-user-input>
+    <app-user-input
+      #nameInput
+      label="Nachname"
+      [(text)]="lastName"
+      [type]="'text'"
+    ></app-user-input>
+    <div class="input-container">
+      <app-user-input
+        #streetInput
+        ID="street"
+        label="Straße"
+        [(text)]="street"
+        [type]="'text'"
+      ></app-user-input>
+      <app-user-input
+        #houseNrInput
+        ID="number"
+        label="Nummer"
+        [(text)]="numberAsText"
+        [type]="'streetNumber'"
+      ></app-user-input>
+    </div>
+    <app-user-input
+      #plzInput
+      label="Postleitzahl"
+      [(text)]="plzAsText"
+      [type]="'plz'"
+    ></app-user-input>
+    <app-user-input
+      #locationInput
+      label="Ort"
+      [(text)]="location"
+      [type]="'text'"
+    ></app-user-input>
+    <app-user-input
+      #emailInput
+      label="Email"
+      [(text)]="email"
+      [type]="'email'"
+    ></app-user-input>
+    <app-user-input
+      #passInput
+      label="Passwort"
+      [(text)]="passwort"
+      [type]="'password'"
+    ></app-user-input>
+    <app-user-input
+      #passInput
+      label="Passwort wiederholen"
+      [(text)]="confirmPasswort"
+      [type]="'password'"
+    ></app-user-input>
+
+    <div class="error-container">
+      <span *ngIf="!isComplete">{{ errorMessage }}</span>
+    </div>
+
+    <div class="register-container">
+      <app-button class="register-btn" color="primary" (click)="registrieren()">
+        Registrieren
+      </app-button>
+      <div class="info">
+        Konto vorhanden?
+        <a routerLink="/login">Zum Login</a>
+      </div>
+    </div>
+  </div>
+</div>

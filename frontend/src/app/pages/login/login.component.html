@@ -1,0 +1,39 @@
+<!-- Einige (globale) Klassen, wie 'page-container', sind schon in der 'src/styles.css' Datei vorgegeben -->
+
+<div class="page-container">
+  <div class="logo-container">
+    <h1 class="title logo">SCOOTER</h1>
+    <img src="/assets/logo.jpg" />
+
+    <app-user-input
+      #emailInput
+      label="Email"
+      [(text)]="email"
+      [type]="'email'"
+    ></app-user-input>
+    <app-user-input
+      #passInput
+      label="Passwort"
+      type="password"
+      [(text)]="password"
+    ></app-user-input>
+  </div>
+
+  <div *ngIf="!isComplete" class="error-container">{{ errorMessage }}</div>
+
+  <div class="login-container">
+    <app-button class="login-btn" color="primary" (click)="login()">
+      Login
+    </app-button>
+
+    <div class="info">
+      Noch kein Konto?
+      <a routerLink="/register">Hier registrieren</a>
+    </div>
+
+    <div class="info about" routerLink="/about">
+      <span class="material-icons icon-outlined">waving_hand</span>
+      <a> Über uns </a>
+    </div>
+  </div>
+</div>

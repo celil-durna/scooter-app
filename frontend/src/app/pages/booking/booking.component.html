@@ -1,0 +1,74 @@
+<div class="page-container">
+  <app-back-button></app-back-button>
+
+  <h1 class="title">Scooter buchen</h1>
+
+  <div class="scrollable-container">
+    
+    <!-- Feld mit Scooterbild und -info-->
+    <div *ngIf="product && scooter" class="details">
+      <div class="image-container">
+        <img *ngIf="product.image" [src]="'http://localhost:8000/api/img/' + product.image" alt="{{ product.name }}" class="small-image">
+        <div class="info-container">
+          <h2 class="scooter-title">{{ product.name }}</h2>
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="info-label">Batteriestand</span>
+              <span class="info-value">{{ getRoundedValue(scooter.battery) }} %</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Reichweite</span>
+              <span class="info-value">{{ getReach()}}</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Geschwindigkeit</span>
+              <span class="info-value">{{getSpeed()}}</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Preis pro Stunde</span>
+              <span class="info-value">{{ getPricePerHour()}} </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  Abschnitt für die Stundenwahl -->
+    <div class="hour-selection">
+      <p class="question">Für wie viele Stunden?</p>
+      <div class="input-container">
+        <div class="input-group">
+          <app-user-input id="hours" [type]="'number'" [(ngModel)]="hours" (ngModelChange)="updateTotalPrice()"></app-user-input>
+          <span class="unit">Stunden</span>
+        </div>
+        <div class="button-group">
+          <button pButton type="button" icon="pi pi-minus" class="p-button-rounded p-button-text" (click)="decrementHours()"></button>
+          <button pButton type="button" icon="pi pi-plus" class="p-button-rounded p-button-text" (click)="incrementHours()"></button>
+        </div>
+      </div>
+
+      <div class="total-price"> 
+        <span>Gesamtpreis: {{getFinalPrice()}} </span>
+      </div>
+    </div>
+
+    <!-- Zahlungsmethoden -->
+    <div class="question">
+      <span>Zahlungsmethoden</span>
+    </div>
+    <app-payment-methods-list [userMethods]="userMethods" (selectedMethodChange)="onSelectedMethodChange($event)"></app-payment-methods-list>
+
+    <div class="bottom">
+      <app-button class='confirm-booking' color='primary' [disabled]="isBookingButtonDisabled()" (click)="confirmBooking()">
+        Buchung bestätigen
+      </app-button>
+      <app-button class='cancel' color='accent' (click)="back()">
+        Abbrechen
+      </app-button>
+    </div>
+
+    <app-navigation-bar></app-navigation-bar>
+  </div>
+  <app-loading-screen *ngIf="loading"></app-loading-screen>
+  <app-toast [message]="toastMessage" [isSuccess]="isSuccess" *ngIf="toastMessage"></app-toast>
+</div>

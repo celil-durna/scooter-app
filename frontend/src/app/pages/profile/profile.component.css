@@ -1,0 +1,51 @@
+.input-container {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between; 
+}
+
+#street {
+  width: 70%;
+}
+
+#number {
+  width: 30%;
+}
+
+.save-change {
+  margin-bottom: 10px;
+}
+
+.bottom {
+  margin-top: 25px;
+  flex-direction: column;
+  transform: scale(0.8);
+}
+
+
+.buttons {
+  height: 10%;
+  width: 50%;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+::ng-deep .buttons app-button {
+  width: 100%; 
+}
+
+::ng-deep .buttons app-button button {
+  font-size: 13px !important; 
+  height: 35px;
+  white-space: nowrap; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; 
+  line-height: 35px; 
+}

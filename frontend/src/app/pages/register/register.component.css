@@ -1,0 +1,49 @@
+.input-container {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between; /* Um den Platz zwischen den Feldern zu verteilen */
+}
+
+#street {
+  width: 70%;
+}
+
+#number {
+  width: 30%;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  width: 100%;
+}
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.register-btn {
+  /**/
+  width: 80%;
+}
+
+.info {
+  font-size: 11pt;
+}
+
+.error-container {
+  color: red;
+  height: 20px; /* Fixed height to reserve space */
+  text-align: center;
+  margin-top: 40px; /* Adjust as needed to control spacing */
+}

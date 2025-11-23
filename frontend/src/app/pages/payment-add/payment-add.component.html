@@ -1,0 +1,106 @@
+<div class="page-container">
+  <div class="header">
+    <app-back-button *ngIf="!(inputBachelorcard || inputHcipal || inputSwpsafe)"></app-back-button>
+    <h1 class="title">Zahlungsmethode hinzufügen</h1>
+  </div>
+  <div class="text-container">
+    <div class="text" *ngIf="!(inputBachelorcard || inputHcipal || inputSwpsafe)"
+      style="color: white; font-size: 15px; font-family: Roboto; font-weight: 700; line-height: 21px; word-wrap: break-word">
+      Zahlungsanbieter auswählen:</div>
+  </div>
+  <div class="pictures-container">
+
+    <div class="picture-container-bachelorcard">
+      <div class="picture-bachelorcard">
+        <button (click)="layoutBachelorCard()">
+          <img class="picture" src="/assets/payment/bachelorcard.png" />
+        </button>
+        <div class="overlay" *ngIf="overlayBachelorcard"></div>
+        <div class="confirmation-symbol" *ngIf="overlayBachelorcard">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"
+              fill="#123800" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="picture-container-hcipal">
+      <div class="picture-hcipal">
+        <button (click)="layoutHciPal()">
+          <img class="picture" src="/assets/payment/hciPal.png" />
+        </button>
+        <div class="overlay" *ngIf="overlayHcipal"></div>
+        <div class="confirmation-symbol" *ngIf="overlayHcipal">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"
+              fill="#123800" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="picture-container-swpsafe">
+      <div class="picture-swpsafe">
+        <button (click)="layoutSwpsafe()">
+          <img class="picture" src="/assets/payment/swpsafe.png" />
+        </button>
+        <div class="overlay" *ngIf="overlaySwpsafe"></div>
+        <div class="confirmation-symbol" *ngIf="overlaySwpsafe">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"
+              fill="#123800" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="layout-container">
+    <div class="input-container">
+      <div *ngIf="inputBachelorcard" class="input-bachelorcard">
+        <app-user-input #inputName label="Name" [(text)]='name' [type]="'fullName'" [containerHeight]="60"
+          [containerOverflow]="'visible'"></app-user-input>
+        <app-user-input #inputCardNumber label="Kartennummer" [(text)]='cardNumber' [type]="'cardnumber'" [containerHeight]="60"
+          [containerOverflow]="'visible'"></app-user-input>
+        <app-user-input #inputSecurityCode label="Prüfziffer" [(text)]='securityCode' [type]="'securityCode'" [containerHeight]="60"
+          [containerOverflow]="'visible'"></app-user-input>
+        <app-user-input #inputExpirationDate label="Gültig bis" [(text)]="expirationDate" [type]="'expirationDate'" [containerHeight]="60"
+          [containerOverflow]="'visible'"></app-user-input>
+      </div>
+      <div *ngIf="inputHcipal" class="input-hcipal">
+        <app-user-input #inputEmail label="Email" [(text)]='email' [type]="'email'" [containerHeight]="60"
+          [containerOverflow]="'visible'"></app-user-input>
+        <app-user-input label="Passwort" [(text)]='password' [type]="'password'" [disablePasswordValidation]="true" [containerHeight]="60"
+          [containerOverflow]="'visible'"></app-user-input>
+      </div>
+      <div *ngIf="inputSwpsafe" class="input-swpsafe">
+        <app-user-input label="Code" [(text)]='code' [type]="'anything'" [containerHeight]="60"
+          [containerOverflow]="'visible'"></app-user-input>
+      </div>
+
+    </div>
+    <div class="error-container" *ngIf="(inputBachelorcard || inputHcipal || inputSwpsafe)">
+      <div *ngIf="(!isComplete||wrongFieldValue)"> {{errorMessage}} </div>
+    </div>
+    <div class="button-container">
+      <div *ngIf="storeButton" class="button-store">
+        <app-button color="primary" (click)="addPaymentMethod()">
+          Zahlungsmethode hinzufügen</app-button>
+      </div>
+      <div *ngIf="cancelButton" class="button-cancel">
+        <app-button color="accent" (click)='cancelInput()'>
+          Abbrechen</app-button>
+      </div>
+      <div *ngIf="cancelBackButton" class="button-cancelback">
+        <app-button color='accent' (click)="back()">
+          Abbrechen
+        </app-button>
+      </div>
+    </div>
+  </div>
+  <app-loading-screen *ngIf="loading"> </app-loading-screen>
+</div>

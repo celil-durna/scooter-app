@@ -1,0 +1,65 @@
+<div class="star-filter">
+  <button
+    class="btn"
+    (click)="productService.showStarFilter = !productService.showStarFilter"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 -960 960 960"
+      width="24px"
+      fill="#e8eaed"
+    >
+      <path
+        d="M440-160q-17 0-28.5-11.5T400-200v-240L168-736q-15-20-4.5-42t36.5-22h560q26 0 36.5 22t-4.5 42L560-440v240q0 17-11.5 28.5T520-160h-80Zm40-308 198-252H282l198 252Zm0 0Z"
+      />
+    </svg>
+    <!--Arrow down-->
+    <svg
+      *ngIf="productService.showStarFilter === false"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 -960 960 960"
+      width="24px"
+      fill="#e8eaed"
+    >
+      <path d="M480-360 280-560h400L480-360Z" />
+    </svg>
+    <!--Arrow up-->
+    <svg
+      *ngIf="productService.showStarFilter === true"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 -960 960 960"
+      width="24px"
+      fill="#e8eaed"
+    >
+      <path d="m280-400 200-200 200 200H280Z" />
+    </svg>
+  </button>
+
+  <div *ngIf="productService.showStarFilter" class="filter-menu-content">
+    <div class="filter-headline">Filtern nach</div>
+    <div
+      *ngFor="let star of filterOptions"
+      (click)="filterBy(star)"
+      class="star-options"
+    >
+      {{ star }} -<svg
+        id="star-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 -960 960 960"
+        width="24px"
+        fill="#e8eaed"
+      >
+        <path
+          d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"
+        />
+      </svg>
+    </div>
+  </div>
+  <span *ngIf="filterIsOn" class="reset-button" (click)="resetFilter()">
+    Reset
+  </span>
+</div>

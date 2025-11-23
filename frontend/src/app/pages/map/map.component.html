@@ -1,0 +1,100 @@
+<div class="map-container">
+  <div class="map-header">
+    <!-- brauchen [ngClass], weil nur der Button auf der Scooterliste-Seite noch um 90 Grad gedreht 
+         werden muss, damit es wie in Figma aussieht -->
+    <span
+      class="switch-btn"
+      (click)="toggleListView()"
+      [ngClass]="{ 'list-view': view === 'list', 'map-view': view === 'map' }"
+    >
+      <span class="material-icons icon-outlined">{{
+        view === "map" ? "view_kanban" : "map"
+      }}</span>
+    </span>
+    <h1 class="title logo">SCOOTER</h1>
+
+    <!-- Suchleiste in Scooterliste-Seite -->
+    <app-search-input
+      *ngIf="view === 'list'"
+      [(text)]="searchText"
+      (input)="onInputChange()"
+    >
+    </app-search-input>
+  </div>
+
+  <!-- Diese Komponente wird durch das "leaflet" Attribut mit der "Leaflet" Bibliothek initialisiert -->
+  <!-- Bitte Dokumentation lesen: https://github.com/bluehalo/ngx-leaflet -->
+  <div
+    *ngIf="view === 'map'"
+    class="map"
+    leaflet
+    [leafletOptions]="options"
+    [leafletLayers]="layers"
+    (leafletClick)="onMapClick($event)"
+  ></div>
+
+  <!-- <app-todo *ngIf="view === 'list'"></app-todo> -->
+
+  <!------------------ ab hier Scooterliste-Seite ------------------>
+
+  <div class="main-container" *ngIf="view === 'list'">
+    <div class="content" *ngFor="let scooter of filteredScooters">
+      <div class="list-element">
+        <div class="blue-header">
+          <div class="header-title">
+            <!-- `?` Operator für den Fall, dass es undefined ist  -->
+            {{ getProductDetails(scooter.product)?.name }}
+          </div>
+          <div class="star-rating">
+            <div class="star" *ngIf="averageRatings[scooter.id] !== undefined">
+              {{ "\u2605" }}
+            </div>
+            <span
+              class="rating"
+              *ngIf="averageRatings[scooter.id] !== undefined"
+            >
+              {{ averageRatings[scooter.id] | number : "1.1-1" }}
+              <!-- 
+                    `1` heißt: mind 1 Ziffer vor Dezimalpunkt
+                   `.1`heißt: mind 1 Ziffer nach Dezimalpunkt  
+                   `-1`heißt: max 1 Ziffer nach Dezimalpunkt -> dadurch wird gerundet 
+              -->
+            </span>
+          </div>
+        </div>
+        <div class="white-box">
+          <img class="card-image" [src]="getProductImage(scooter.product)" />
+        </div>
+        <div class="green-bar"></div>
+        <div class="scooter-information">
+          <div class="info-row">
+            <div class="info-item-1">
+              <div class="grey-box-1 info-title">
+                {{ roundBatteryStatus(scooter.battery) }}%
+              </div>
+              <div class="info-subtitle">Batteriestand</div>
+            </div>
+            <div class="info-item-2">
+              <div class="grey-box-2 info-title">
+                {{getReach(scooter.product,roundBatteryStatus(scooter.battery))}}
+              </div>
+              <div class="info-subtitle">Reichweite</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="price-container">
+              <div class="info-price">PREIS:</div>
+              <div class="value">
+                {{getPricePerHour(scooter.product)}}/H
+              </div>
+            </div>
+            <app-green-button
+              class="green-button"
+              (click)="scooterpage(scooter.id)"
+            ></app-green-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

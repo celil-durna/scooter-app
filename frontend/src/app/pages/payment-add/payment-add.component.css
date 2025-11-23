@@ -1,0 +1,119 @@
+.title {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 31px; /*Titel parallel zum back-button*/
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  white-space: nowrap;
+  justify-content: space-around;
+}
+
+.text-container{
+  width: 90%;
+  height: 5%;
+  overflow: hidden;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-left: 3%;
+}
+
+.pictures-container {
+  width: 100%;
+  height: 14%;
+  display: flex;
+  overflow: hidden;
+}
+
+.picture-container-bachelorcard,
+.picture-container-hcipal,
+.picture-container-swpsafe {
+  background-color: white;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.picture-bachelorcard button,
+.picture-hcipal button,
+.picture-swpsafe button {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.picture {
+  width: 90%;
+  height: 90%;
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+}
+
+.input-bachelorcard,
+.input-hcipal,
+.input-swpsafe {
+  min-height: 300px;
+  width: 90%;
+}
+
+.button-container {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.button-store,
+.button-cancel,
+.button-cancelback {
+  margin-bottom: 5px;
+  width: 70%;
+  white-space: nowrap;
+}
+
+.error-container {
+  height: 30px;
+  width: 100%;
+  margin-bottom: -25px;
+  color: red;
+  text-align: center;
+}
+
+.picture-container-bachelorcard,
+.picture-container-hcipal,
+.picture-container-swpsafe {
+  position: relative;
+}
+
+.overlay {
+  background: rgba(17, 198, 68, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.confirmation-symbol {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

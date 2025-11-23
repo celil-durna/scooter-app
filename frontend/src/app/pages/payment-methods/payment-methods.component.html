@@ -1,0 +1,47 @@
+<router-outlet></router-outlet>
+<div class="page-container">
+  <div class="head-container">
+    <app-back-button></app-back-button>
+    <h1 class="title">Zahlungsmethoden</h1>
+  </div>
+  <div class="scrollable-container">
+      <div *ngFor="let method of userMethods" class="payment">
+        <img [src]="getImage(method.methodName)" class="payment-picture" />
+        <div class="user-container">
+          <ng-container *ngIf="method.methodName === 'bachelorcard'" class='bachelorcard'>
+            <div class="user-name">{{ method.name }}</div>
+              <div class="card-number">**** {{ method.cardNumber }}</div>
+          </ng-container>
+          <ng-container *ngIf="method.methodName === 'hcipal'">
+            <div class="user-email">
+              {{method.email}}
+            </div>
+          </ng-container>
+          <ng-container *ngIf="method.methodName === 'swpsafe'">
+            <div class="swpCode">
+              **** {{method.code}}
+            </div>
+          </ng-container>
+        </div>
+        <div class="delete-container">
+          <svg xmlns="http://www.w3.org/2000/svg" height="50%" viewBox="0 -960 960 960" width="50%" fill="#999999"><path d="M312-144q-29.7 0-50.85-21.15Q240-186.3 240-216v-480h-48v-72h192v-48h192v48h192v72h-48v479.57Q720-186 698.85-165T648-144H312Zm336-552H312v480h336v-480ZM384-288h72v-336h-72v336Zm120 0h72v-336h-72v336ZM312-696v480-480Z"
+          (click)="deletePaymentMethod(method.methodName, method.id)"
+            /></svg>
+        </div>
+      </div>
+      <div class="button-container">
+        <app-add-payment> </app-add-payment>
+      </div>
+  </div>
+</div>
+<app-confirm-dialog
+  [visible]="showConfirmDialog"
+  [header]="dialogHeader"
+  [message]="dialogMessage"
+  (confirm)="handleConfirmation()"
+  (cancel)="handleCancellation()"
+></app-confirm-dialog>
+<app-toast *ngIf="toastMessage"
+[message]='toastMessage'
+[isSuccess]='isSuccess'>
+</app-toast>

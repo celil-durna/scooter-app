@@ -1,0 +1,26 @@
+<div class="page-container" *ngIf="user">
+
+    <h1 class="title">Profil bearbeiten</h1>
+    
+     <app-back-button></app-back-button>
+   
+     <div class="scrollable-container">
+       <app-user-input label="Vorname" [(ngModel)]="user.firstName"></app-user-input>
+       <app-user-input label="Nachname" [(ngModel)]="user.lastName"></app-user-input>
+       <div class="input-container">
+         <app-user-input label="Straße" ID="street" [type]="'text'" [(ngModel)]="user.street"></app-user-input>
+         <app-user-input label="Nummer" ID="number" [type]="'streetNumber'" [(ngModel)]="user.streetNumber"></app-user-input>
+       </div>
+       <app-user-input label="Postleitzahl" [type]="'plz'" [(ngModel)]="user.plz"></app-user-input>
+       <app-user-input label="Ort" [type]="'text'" [(ngModel)]="user.city"></app-user-input>
+       <app-user-input label="Email" id="email" [type]="'email'" [(ngModel)]="user.email" [readonly]="true"></app-user-input>
+       <app-user-input label="Passwort" id="password" [type]="'password'"></app-user-input>
+       <app-user-input label="Passwort wiederholen" id="confirmPassword" [type]="'password'"></app-user-input>
+   
+       <div class="buttons">
+         <app-button class='save-change' color='primary' (click)="onSave()">Änderungen Speichern </app-button>
+         <app-button class='no-change' color='accent' (click)="onCancel()">Abbrechen</app-button>
+       </div>
+     </div>
+   </div>
+   

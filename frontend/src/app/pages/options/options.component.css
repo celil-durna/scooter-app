@@ -1,0 +1,193 @@
+* {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
+  
+  *:focus {
+    outline: none;
+  }
+
+.page-container {
+    padding: 20px;
+    background: #26627C; /* Background color */
+}
+
+
+.back-button {
+    display: inline-block;
+}
+
+.title {
+    margin-top: -22px; 
+    font-size: 24px;
+    margin-left: 10px; /* Adjust space between back button and title */
+    margin-bottom: 0; /* Remove bottom margin */
+    flex-grow: 1; /* Making the title take the remaining space */
+}
+
+.settings-entry {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.switch-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.switch-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.switch-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    margin-right: 48px;
+    width: 103px;
+    height: 66px;
+}
+
+.option.shift-right {
+    margin-left: 10px; /* Shift the option to the right */
+    width: 103px;
+    height: 66px;
+}
+
+.option-label {
+    cursor: pointer;
+    display: flex;
+    position: relative; /* Position for checkmark */
+}
+
+.checkbox {
+    display: inline-block;
+    width: 120px;
+    height: 80px;
+    border: 1px solid #000000;
+    margin-left: 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+.checkmark {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: #4CAF50; /* Green background */
+    border-radius: 50%; /* Circle shape */
+    display: none; /* Hide by default */
+    justify-content: center;
+    align-items: center;
+}
+
+.checkmark::after {
+    content: '✔';
+    color: white;
+    font-size: 14px; /* Adjust size as needed */
+    display: block;
+}
+
+input[type="radio"]:checked + .option-label .checkbox .checkmark {
+    display: flex; /* Show checkmark when selected */
+}
+
+.unit {
+    font-family: 'Racing Sans One';
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+}
+
+.text {
+    font-family: 'Roboto';
+    font-size: 14px;
+    line-height: 21px;
+    color: #000000;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.save-change, .no-change {
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.save-change {
+    align-self: center; /* Center the "Änderungen speichern" button */
+    width: 250px ;
+    height: 30px ;
+    
+}
+
+.no-change {
+    align-self: center; /* Center the "Abbrechen" button */
+    width: 250px;
+    height: 30px;
+    margin-top: 25px;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.bottom {
+    margin-top: 25px;
+    flex-direction: column;
+    transform: scale(0.8);
+  }
+  
+  
+  .buttons {
+    height: 10%;
+    width: 50%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+  
+  }
+  
+  ::ng-deep .buttons app-button {
+    width: 70%; 
+  }
+  
+  ::ng-deep .buttons app-button button {
+    font-size: 13px !important; 
+    height: 35px;
+    white-space: nowrap; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    line-height: 35px; 
+  }

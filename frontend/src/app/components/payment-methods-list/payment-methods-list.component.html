@@ -1,0 +1,33 @@
+<div class="stored-payments" id="stored-payments">
+  <div *ngFor="let method of userMethods" class="payment" (click)="selectPaymentMethod(method)">
+    <img [src]="getImage(method.methodName)" class="payment-picture" />
+    <div class="user-container" [ngClass]="{'selected': selectedMethod === method}">
+
+      <ng-container *ngIf="method.methodName === 'bachelorcard'" class='bachelorcard'>
+        <div class="user-name">{{ method.name }}</div>
+        <div class="card-number">**** {{ method.cardNumber }}</div>
+      </ng-container>
+
+      <ng-container *ngIf="method.methodName === 'hcipal'">
+        <div class="user-email">{{ method.email }}</div>
+      </ng-container>
+
+      <ng-container *ngIf="method.methodName === 'swpsafe'">
+        <div class="swpCode">**** {{ method.code }}</div>
+      </ng-container>
+
+      <div class="overlay" *ngIf="selectedMethod === method"></div>
+      <div class="confirmation-symbol" *ngIf="selectedMethod === method">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"
+            fill="#123800" />
+        </svg>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Button zum Hinzufügen einer Zahlungsmethode nur anzeigen, wenn keine Zahlungsmethoden vorhanden sind -->
+  <app-add-payment *ngIf="userMethods.length === 0" ></app-add-payment>
+</div>

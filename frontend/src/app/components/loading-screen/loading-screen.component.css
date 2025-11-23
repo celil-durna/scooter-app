@@ -1,0 +1,26 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(38, 98, 124, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000; 
+}
+
+.opaque {
+    background-color: rgba(38, 98, 124, 1);
+}
+
+.overlay ::ng-deep .p-progress-spinner {
+    width: 140px; 
+    height: 140px; 
+}
+
+.overlay ::ng-deep .p-progress-spinner-circle {
+    stroke: #97fb64 !important; 
+    stroke-width: 3; 
+}

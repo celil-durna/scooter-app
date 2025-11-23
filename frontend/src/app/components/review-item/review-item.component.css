@@ -1,0 +1,146 @@
+.review-item {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 12px;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.review-header {
+  width: 100%;
+}
+
+.review-user {
+  font-weight: bold;
+  color: black;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  width: 100%;
+}
+
+#name {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 5px;
+}
+
+.review-user .material-symbols-outlined {
+  margin-right: 5px;
+}
+
+.review-date {
+  font-size: 12px;
+  font-weight: 200;
+  padding: 3px;
+  color: #929191;
+  margin-left: auto; 
+}
+
+.review-stars {
+  font-size: 22px;
+  margin-left: 2px;
+  color: #97fb64;
+}
+
+.separator {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 8px 0;
+}
+
+.review-text {
+  font-size: 16px;
+  margin-left: 4px;
+  color: #333;
+}
+
+/* review-text im Bearbeitungsmodus */
+.review-text textarea {
+  font-size: 16px;
+  margin-left: 0px;
+  margin-top: 10px;
+  color: #333;
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  background: none;
+  font-family: inherit;
+  overflow: hidden;
+}
+
+.edit-and-like-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+#edit-icon {
+  color: rgb(182, 180, 180);
+  font-weight: 300;
+  margin-bottom: 4px;
+}
+
+.save-icon {
+  font-size: 28px;
+  margin-top: 3px;
+  margin-left: 1px;
+}
+
+#delete-icon {
+  color: rgb(182, 180, 180);
+  font-size: 25px;
+  font-weight: 300;
+  margin-bottom: 4px;
+  margin-left: 5px;
+}
+
+#cancel-icon {
+  color: rgb(182, 180, 180);
+  font-size: 26px;
+  font-weight: 300;
+  margin-bottom: 0px;
+  margin-left: 5px;
+}
+
+.thumb-up-container {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+#thumb-up {
+  color: black;
+}
+
+#thumb-up.liked {
+  color: green; 
+}
+
+#helpful-count {
+  font-size: 16px;
+  color: black;
+  margin-left: 5px;
+  margin-right: 3px;
+  margin-bottom: -3px;
+}
+
+#helpful-count.liked-count {
+  color: green; 
+}
+
+.edited-label {
+  color: rgb(182, 180, 180);
+  font-size: 14px;
+  margin-left: 10px;
+  font-style: italic;
+  margin-right: 12px;
+  margin-bottom: -3px;
+}

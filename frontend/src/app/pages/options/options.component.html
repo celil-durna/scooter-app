@@ -1,0 +1,97 @@
+<div class="page-container">
+
+        <h1 class="title">Optionen</h1>
+        <app-back-button class="back-button"></app-back-button>
+  
+    <div class="settings-entry">
+        <div class="switch-container">
+            <label class="switch-label">Geschwindigkeit:</label>
+            <div class="switch-row">
+                <div class="option shift-right">
+                    <input type="radio" name="geschwindigkeit" [(ngModel)]="speed" value="metric" id="kmh">
+                    <label for="kmh" class="option-label">
+                        <span class="checkbox">
+                            <span class="unit">km / h</span>
+                            <span class="text">metrisch</span>
+                            <span class="checkmark"></span>
+                        </span>
+                    </label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="geschwindigkeit" [(ngModel)]="speed" value="imperial" id="mph">
+                    <label for="mph" class="option-label">
+                        <span class="checkbox">
+                            <span class="unit">mp / h</span>
+                            <span class="text">imperial</span>
+                            <span class="checkmark"></span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="settings-entry">
+        <div class="switch-container">
+            <label class="switch-label">Distanzen:</label>
+            <div class="switch-row">
+                <div class="option shift-right">
+                    <input type="radio" name="distanzen" [(ngModel)]="distance" value="metric" id="km">
+                    <label for="km" class="option-label">
+                        <span class="checkbox">
+                            <span class="unit">km</span>
+                            <span class="text">metrisch</span>
+                            <span class="checkmark"></span>
+                        </span>
+                    </label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="distanzen" [(ngModel)]="distance" value="imperial" id="mi">
+                    <label for="mi" class="option-label">
+                        <span class="checkbox">
+                            <span class="unit">mi</span>
+                            <span class="text">imperial</span>
+                            <span class="checkmark"></span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="settings-entry">
+        <div class="switch-container">
+            <label class="switch-label">Währung:</label>
+            <div class="switch-row">
+                <div class="option shift-right">
+                    <input type="radio" name="waehrung" [(ngModel)]="currency" value="euro" id="euro">
+                    <label for="euro" class="option-label">
+                        <span class="checkbox">
+                            <span class="unit">€</span>
+                            <span class="text">Euro</span>
+                            <span class="checkmark"></span>
+                        </span>
+                    </label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="waehrung" [(ngModel)]="currency" value="dollar" id="dollar">
+                    <label for="dollar" class="option-label">
+                        <span class="checkbox">
+                            <span class="unit">$</span>
+                            <span class="text">US Dollar</span>
+                            <span class="checkmark"></span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <app-button class='save-change' color='primary' (click)="onSave()">
+            Änderungen speichern
+        </app-button>
+        <app-button class='no-change' color='accent' (click)="onCancel()">
+            Abbrechen
+        </app-button>
+    </div>
+</div>

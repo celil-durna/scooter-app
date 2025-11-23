@@ -1,0 +1,58 @@
+<div
+  class="booking-item"
+  [ngClass]="{
+    'current-booking': type === 'current',
+    'past-booking': type === 'past'
+  }"
+  (click)="navigateToScooter()"
+>
+  <img
+    [src]="'http://localhost:8000/api/img/' + booking.Scooter.Product.image"
+    alt="{{ booking.Scooter.Product.name }}"
+    class="scooter-image"
+    [ngClass]="{ grayscale: type === 'past' }"
+  />
+  <div class="booking-details">
+    <h2 class="scooter-title">{{ booking.Scooter.Product.name }}</h2>
+    <div class="booking-info">
+      <p class="booking-info-label">Ausgeliehen am:</p>
+      <p class="booking-info-value">
+        {{ booking.bookingTime | date : "dd.MM.yy HH:mm" }}
+      </p>
+    </div>
+    <div class="booking-info" id="returntime">
+      <p class="booking-info-label">Zurückzugeben am:</p>
+      <p class="booking-info-value">
+        {{ booking.returnTime | date : "dd.MM.yy HH:mm" }}
+      </p>
+    </div>
+    <div class="horizontal-infos">
+      <div
+        [ngClass]="{
+          'green-box': type === 'current',
+          'gray-box': type === 'past'
+        }"
+      >
+        <div class="booking-info">
+          <span class="material-symbols-outlined" id="calendar-icon"
+            >today</span
+          >
+          <p class="booking-info-value">{{ booking.hours }} h</p>
+        </div>
+      </div>
+      <div
+        [ngClass]="{
+          'green-box': type === 'current',
+          'gray-box': type === 'past'
+        }"
+      >
+        <div class="booking-info">
+          <span class="material-symbols-outlined">sell</span>
+          <p class="booking-info-value">
+            {{ getPriceWithCurrency(booking.totalPrice) }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

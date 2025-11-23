@@ -1,0 +1,74 @@
+.star-filter {
+  position: sticky;
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  -webkit-tap-highlight-color: transparent;
+  padding-top: 0.625rem;
+  padding-bottom: 0.5rem;
+  border-radius: 15px;
+  background-color: #52aed5;
+  color: #ffffff;
+  border: none;
+  display: flex;
+  cursor: pointer;
+  position: static;
+  align-items: center; /* Zentrieren horizontal */
+  margin-bottom: 15px;
+}
+
+.filter-menu-content {
+  z-index: 1;
+  border-radius: 10px;
+  position: absolute; /* Position the dropdown absolutely */
+  background-color: #3da3ce;
+  height: 180px; /* Set a maximum height for the scrollable area */
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+  width: 120px;
+  bottom: 20%;
+}
+
+.filter-headline {
+  padding-top: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  text-align: center;
+  font-size: medium;
+  width: 120px;
+  box-shadow: inset 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+}
+
+.star-options {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: black;
+  /* padding: 12px 16px; */
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+}
+
+svg {
+  position: static;
+}
+
+.text {
+  font-size: 15px;
+}
+
+.reset-button {
+  -webkit-tap-highlight-color: transparent; /* für chrome um das highlighting zu verstecken */
+  margin-bottom: 15px;
+  text-align: center;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #52aed5;
+  padding: 10px;
+  border-radius: 15px;
+  font-size: medium;
+}
