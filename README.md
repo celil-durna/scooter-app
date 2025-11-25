@@ -4,14 +4,12 @@ This project was developed as part of the *Softwareprojekt* course at the Univer
 It is a scooter web app with an interactive map of Konstanz that shows available scooters with specific details and allows users to rent them.
 
 
-***
+---
 
 ## Demo-Video of App 
 
 You can watch the scooter app demo on YouTube: click [here](https://youtu.be/JZ8LH8Orbwo)
 
-
----
 
 ## Screenshots of App
 
