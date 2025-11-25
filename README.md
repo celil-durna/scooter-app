@@ -31,3 +31,36 @@ You can watch the scooter app demo on YouTube: click [here](https://youtu.be/JZ8
 
 
 ---
+
+## Table of Contents
+
+This README provides an overview of the project, tech stack & dependencies, setup instructions, how to run the app, and my individual contributions.
+
+1. [Project overview](#project-overview)  
+2. [Tech stack](#tech-stack)  
+3. [Setup](#setup)  
+4. [Running the app](#running-the-app)  
+5. [My contributions](#my-contributions)
+
+
+## Tech stack
+
+**Language**
+
+- **TypeScript** 
+
+**Frontend**
+
+- Angular (main frontend framework)
+- PrimeNG (UI components)
+- Leaflet (interactive map with OpenStreetMap)
+
+**Backend**
+
+- Node.js (TypeScript/JavaScript runtime enviroment for the server)
+- Express (Node.js REST API framework for routing and middleware)
+- Sequelize (TypeScript ORM for PostgreSQL database)
+
+**Database**
+
+- PostgreSQL (running in a Docker container for local development)
