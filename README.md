@@ -6,7 +6,7 @@ It is a scooter web app with an interactive map of Konstanz that shows available
 
 ## Demo-Video of App 
 
-[![Scooter App Demo](app_screenshots/01_login.png)](https://youtu.be/fcQfk2FgQXA)
+To watch the scooter app demo on YouTube, click [here](https://youtu.be/JZ8LH8Orbwo)
 
 
 ## Screenshots of App
