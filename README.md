@@ -48,23 +48,19 @@ This README provides an overview of the project, tech stack & dependencies, setu
 ## Tech stack
 
 **Language**
-
 - **TypeScript** 
 
 **Frontend**
-
 - **Angular** (main frontend framework)
 - **PrimeNG** (UI components)
 - **Leaflet** (interactive map with OpenStreetMap)
 
 **Backend**
-
 - **Node.js** (TypeScript/JavaScript runtime enviroment for the server)
 - **Express** (Node.js REST API framework for routing and middleware)
 - **Sequelize** (TypeScript ORM for PostgreSQL database)
 
 **Database**
-
 - **PostgreSQL** (running in a **Docker** container for local development)
 
 
