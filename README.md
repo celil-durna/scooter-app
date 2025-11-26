@@ -102,7 +102,6 @@ The database setup is defined in:
 ### 3) Install dependencies
 
 Backend:
-
 ```bash
 cd backend
 npm install
@@ -110,18 +109,31 @@ npm install
 
 Frontend:
 ```bash
-cd frontend
+cd ../frontend
 npm install
 ```
 
+### 3) Start the PostgreSQL database (Docker)
 
-2. Run the following command to run a selected algorithm and print the results.
+Make sure **Docker Desktop** is started, then run:
 
-   ```bash
-   go run main.go -file <path_to_graph_file> -algo <cmsa|greedy-prim|greedy-avg|exact> -root <int> -budget <int> [more flags]
-   ```
-   or:
+```bash
+cd ../database
+docker compose up -d
+```
 
-   ```bash
-   go run main.go -file <path_to_graph_file> -algo <cmsa|greedy-prim|greedy-avg|exact> -root <int> -budget_pct <0..1> [more flags]
-   ```
+### 4) Start the backend
+
+```bash
+cd ../backend
+npm start
+```
+
+### 4) Start the frontend
+
+Open a second terminal and run:
+
+```bash
+cd frontend
+npm start
+```
