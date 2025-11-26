@@ -38,7 +38,7 @@ This README provides an overview of the project, tech stack & dependencies, setu
 
 1. [Project overview](#project-overview)  
 2. [Tech stack](#tech-stack)  
-3. [Setup to run the app](#setup-to-run-the-app)  
+3. [Requirements to run the app](#requirements-to-run-the-app)  
 4. [How to run the app](#how-to-run-the-app)  
 5. [My contributions](#my-contributions)
 
@@ -89,3 +89,32 @@ These dependencies are defined in:
 The database setup is defined in:
 
 - `database/docker-compose.yml` – database setup (PostgreSQL via Docker Compose)
+
+
+---
+
+## How to run the code
+
+### 1) Clone the repository
+
+ ```bash
+   go run main.go -file <path_to_graph_file> -algo <cmsa|greedy-prim|greedy-avg|exact> -root <int> -budget <int> [more flags]
+   ```
+   or:
+
+   ```bash
+   go run main.go -file <path_to_graph_file> -algo <cmsa|greedy-prim|greedy-avg|exact> -root <int> -budget_pct <0..1> [more flags]
+   ```
+
+1. Stay in the `scooter-app/` directory of the project.
+
+2. Run the following command to run a selected algorithm and print the results.
+
+   ```bash
+   go run main.go -file <path_to_graph_file> -algo <cmsa|greedy-prim|greedy-avg|exact> -root <int> -budget <int> [more flags]
+   ```
+   or:
+
+   ```bash
+   go run main.go -file <path_to_graph_file> -algo <cmsa|greedy-prim|greedy-avg|exact> -root <int> -budget_pct <0..1> [more flags]
+   ```
