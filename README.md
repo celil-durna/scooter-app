@@ -75,7 +75,9 @@ This README provides an overview of the project, tech stack & dependencies, setu
 To run the app locally you need to install the following tools:
 
 - **Node.js** ≥ 18 (download [here](https://nodejs.org/en/download))
-  -> includes **npm** (Node package manager)  
+   
+   -> includes **npm** (Node package manager)  
+   
 - **Docker Desktop** including Docker Compose (download [here](https://docs.docker.com/desktop/))
 
 All project dependencies (TypeScript, Angular, PrimeNG, Leaflet, Express, Sequelize)  
