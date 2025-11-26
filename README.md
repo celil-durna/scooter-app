@@ -144,9 +144,9 @@ npm start
 
 - Switch to a mobile device view in your browser dev tools (recommended: **iPhone 12 Pro**).
 
-### How to stop everything
+### 7) How to stop everything
 
-- Stop frontend/backend: press ``Ctrl + C` in each terminal
+- Stop frontend/backend: press `Ctrl + C` in each terminal
 
 - Stop database container:
   ```bash
