@@ -129,7 +129,7 @@ cd ../backend
 npm start
 ```
 
-### 4) Start the frontend
+### 5) Start the frontend
 
 Open a second terminal and run:
 
@@ -137,3 +137,9 @@ Open a second terminal and run:
 cd frontend
 npm start
 ```
+
+### 6) Open the app
+
+- open `http://localhost:4200` in your browser. 
+
+- switch to a mobile device view in your browser dev tools (recommended: **iPhone 12 Pro**).
