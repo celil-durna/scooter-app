@@ -48,19 +48,23 @@ This README provides an overview of the project, tech stack & dependencies, setu
 ## Tech stack
 
 **Language**
+
 - **TypeScript** 
 
 **Frontend**
+
 - **Angular** (main frontend framework)
 - **PrimeNG** (UI components)
 - **Leaflet** (interactive map with OpenStreetMap)
 
 **Backend**
+
 - **Node.js** (TypeScript/JavaScript runtime enviroment for the server)
 - **Express** (Node.js REST API framework for routing and middleware)
 - **Sequelize** (TypeScript ORM for PostgreSQL database)
 
 **Database**
+
 - **PostgreSQL** (running in a **Docker** container for local development)
 
 
@@ -70,12 +74,12 @@ This README provides an overview of the project, tech stack & dependencies, setu
 
 To run the app locally you need to install the following tools:
 
-- **Node.js** ≥ 18 (download [here](https://nodejs.org/en/download))<br>
+- **Node.js** ≥ 18 ([Download](https://nodejs.org/en/download))<br>
   Includes **npm** (Node package manager)  
-- **Docker Desktop** including Docker Compose (download [here](https://docs.docker.com/desktop/))
+- **Docker Desktop** including Docker Compose ([Download](https://docs.docker.com/desktop/))
 
 All project dependencies (TypeScript, Angular, PrimeNG, Leaflet, Express, Sequelize)  
-are installed via `npm install` in the `frontend` and `backend` folders.
+are installed via `npm install` in the `frontend` and `backend` folders.<Br>
 The PostgreSQL database runs in a Docker container (via Docker Compose).
 
 These dependencies are defined in:
