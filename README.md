@@ -78,8 +78,7 @@ To run the app locally you need to install the following tools:
   Includes **npm** (Node package manager)  
 - **Docker Desktop** including Docker Compose ([Download](https://docs.docker.com/desktop/))
 
-All project dependencies (TypeScript, Angular, PrimeNG, Leaflet, Express, Sequelize)  
-are installed via `npm install` in the `frontend` and `backend` folders.<Br>
+All project dependencies (TypeScript, Angular, PrimeNG, Leaflet, Express, Sequelize) are installed via `npm install` in the `frontend` and `backend` folders.<Br>
 The PostgreSQL database runs in a Docker container (via Docker Compose).
 
 These dependencies are defined in:
