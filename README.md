@@ -52,10 +52,10 @@ The goal of this project was to implement a mobile-first scooter rental web appl
 
 ### Key Features
 
-- **Authentication**
-  - User login and registration
+**1) Authentication**
+- User login and registration
 
-- **Scooter discovery**
+**2) Scooter discovery**
   - Interactive map of Konstanz with clickable scooter markers
   - Scooter list with search/filtering
 
