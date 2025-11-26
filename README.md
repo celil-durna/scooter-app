@@ -40,7 +40,8 @@ This README provides an overview of the project, tech stack & dependencies, setu
 2. [Tech stack](#tech-stack)  
 3. [Requirements to run the app](#requirements-to-run-the-app)  
 4. [How to run the app](#how-to-run-the-app)  
-5. [My contributions](#my-contributions)
+5. [Payment method accounts](#payment-method-accounts) 
+6. [My contributions](#my-contributions)
 
 
 ---
@@ -50,30 +51,28 @@ This README provides an overview of the project, tech stack & dependencies, setu
 The goal of this project was to implement a mobile-first scooter rental web application where users can find available scooters on an interactive map of Konstanz.
 
 
-### Key Features
+### Key Features:
 
 **1) Authentication**
 - User login and registration
 
 **2) Scooter discovery**
-  - Interactive map of Konstanz with clickable scooter markers
-  - Scooter list with search/filtering
+- Interactive map of Konstanz with clickable scooter markers
+- Scooter list with search/filtering
 
-- **Scooter details & reviews**
-  - details: battery level, range, speed, price per hour, rating, decription
-  - reviews: view existing reviews (including like counter) and submit a review (only after booking scooter)
+**3) Scooter details & reviews**
+- details: battery level, range, speed, price per hour, rating, decription
+- reviews: view existing reviews (including like counter) and submit a review (only after booking scooter)
 
+**4) Booking & payments**
+- Book a scooter (select rental duration, confirm booking)
+- Add and manage payment methods (e.g., bachelorcard / HCPal / SWPsafe)
 
-- **Booking & Payments**
-  - Booking flow (select rental duration, confirm booking)
-  - Booking history (current and past bookings)
-  - Add and manage payment methods (e.g., bachelorcard / HCPal / SWPsafe)
-
-- **Reviews**
+**5) Reviews**
   - Write reviews and view existing reviews (including helpful/like counter)
 
-- **Settings**
-  - Profile (view/edit user data, password change)
+**6) Settings**
+  - Profile (view/edit user data, change password)
   - Payments (manage stored payment methods)
   - Options (currency, distance unit, speed unit)
   - Statistics (user rental stats such as total rentals, total time, total spend, distance)
@@ -197,4 +196,44 @@ npm start
   cd database
   docker compose down
   ```
+
+
+---
+
+## Payment method accounts 
+
+Nicht alle Accounts funktionieren - manche Accounts können Fehler verursachen, die vom Server behandelt werden müssen!
+
+### BachelorCard
+
+| Name   | cardNumber | securityCode | expirationDate (MM/YY) | Notiz |
+| ------ | ---------- | ------------ | ---------------------- | ------ | 
+| Paul Milgramm | `4485-5420-1334-7098` | `000` | `4/44` | "Normale" Karte |
+| Petra Heisenberg | `4556-0108-9131-6241` | `123` | `3/33` | Kein Geld auf der Kreditkarte |
+| Benjamin Schneider | `1010-1010-1010-1014` | `101` | `10/10` | Abgelaufene Karte (nur bis 2010 gültig) |
+| Dagmar Baumann | `0000-0000-0000-0000` | `350` | `1/23` | Kann nur kleinere Summen (<10) bezahlen |
+
+### HCIPal
+
+| accountName | accountPassword | Notiz |
+| ---------- | ------------ | ------ | 
+| `paul@milgram.de` | `zJac6Em^q7JrG@w!FMf4@` | "Normaler" Account |
+| `b.schneider@gov.us` | `*REc#YbCMj6WaWmksYm9*` | "Normaler" Account |
+| `petra@heisenberg.eu` | `6uTQu8DhqXVz!!fXpGcD5` | Kein Geld auf diesem Account |
+| `hcipal@baumann.de` | `TQxeqbztPAQvopE*Bi9E*` | Kann nur kleinere Summen (<10) bezahlen |
+
+### SWPSafe
+
+| swpCode | Notiz |
+| ---------- | ------ | 
+| `y^t@y7#uMYu@` | "Normale" Karte |
+| `^iexa&8#53iE` | Kein Geld mehr verfügbar |
+| `Ms7wa#%@^9Xi` | "Normale" Karte |
+| `k@8NqfLJ%Bx9` | Kann nur kleinere Summen (<10) bezahlen |
+
+
+
+---
+
+## My contributions
 
