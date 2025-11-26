@@ -38,10 +38,12 @@ This README provides an overview of the project, tech stack & dependencies, setu
 
 1. [Project overview](#project-overview)  
 2. [Tech stack](#tech-stack)  
-3. [Setup](#setup)  
-4. [Running the app](#running-the-app)  
+3. [Setup to run the app](#setup-to-run-the-app)  
+4. [How to run the app](#how-to-run-the-app)  
 5. [My contributions](#my-contributions)
 
+
+---
 
 ## Tech stack
 
@@ -64,3 +66,27 @@ This README provides an overview of the project, tech stack & dependencies, setu
 **Database**
 
 - **PostgreSQL** (running in a **Docker** container for local development)
+
+
+---
+
+## Requirements to run the app
+
+To run the app locally you need to install the following tools:
+
+- **Node.js** ≥ 18 (download [here](https://nodejs.org/en/download))
+  -> includes **npm** (Node package manager)  
+- **Docker Desktop** including Docker Compose (download [here](https://docs.docker.com/desktop/))
+
+All project dependencies (TypeScript, Angular, PrimeNG, Leaflet, Express, Sequelize)  
+are installed via `npm install` in the `frontend` and `backend` folders.
+The PostgreSQL database runs in a Docker container (via Docker Compose).
+
+These dependencies are defined in:
+
+- `frontend/package.json` – frontend packages (TypeScript, Angular, PrimeNG, Leaflet)  
+- `backend/package.json` – backend packages (TypeScript, Express, Sequelize) 
+
+The database setup is defined in:
+
+- `database/docker-compose.yml` – database setup (PostgreSQL via Docker Compose)
