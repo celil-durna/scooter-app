@@ -93,7 +93,7 @@ The database setup is defined in:
 
 ---
 
-## How to run the code
+## How to run the app
 
 ### 1) Clone the repository
 
@@ -140,6 +140,17 @@ npm start
 
 ### 6) Open the app
 
-- open `http://localhost:4200` in your browser. 
+- Open `http://localhost:4200` in your browser. 
 
-- switch to a mobile device view in your browser dev tools (recommended: **iPhone 12 Pro**).
+- Switch to a mobile device view in your browser dev tools (recommended: **iPhone 12 Pro**).
+
+### How to stop everything
+
+- Stop frontend/backend: press ``Ctrl + C` in each terminal
+
+- Stop database container:
+  ```bash
+  cd database
+  docker compose down
+  ```
+
