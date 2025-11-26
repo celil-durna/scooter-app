@@ -45,6 +45,50 @@ This README provides an overview of the project, tech stack & dependencies, setu
 
 ---
 
+## Project Overview
+
+The goal of this project was to implement a mobile-first scooter rental web application where users can find available scooters on an interactive map of Konstanz.
+
+
+### Key Features
+
+- **Authentication**
+  - User login and registration
+
+- **Scooter discovery**
+  - Interactive map of Konstanz with clickable scooter markers
+  - Scooter list with search/filtering
+
+- **Scooter details & reviews**
+  - details: battery level, range, speed, price per hour, rating, decription
+  - reviews: view existing reviews (including like counter) and submit a review (only after booking scooter)
+
+
+- **Booking & Payments**
+  - Booking flow (select rental duration, confirm booking)
+  - Booking history (current and past bookings)
+  - Add and manage payment methods (e.g., bachelorcard / HCPal / SWPsafe)
+
+- **Reviews**
+  - Write reviews and view existing reviews (including helpful/like counter)
+
+- **Settings**
+  - Profile (view/edit user data, password change)
+  - Payments (manage stored payment methods)
+  - Options (currency, distance unit, speed unit)
+  - Statistics (user rental stats such as total rentals, total time, total spend, distance)
+
+### Project Process
+
+We worked with an **agile Scrum process** (user stories, iterative sprints) and based the UI/UX on a provided **Figma design** as orientation.
+
+- Figma UX design: click [here](https://www.figma.com/design/wx6yeViEW4xeIZXcdmYUSC/Design---SWP24?node-id=0-1&p=f)
+
+- Miro User stories: click [here](https://miro.com/app/board/uXjVKYA4pJ8=/)
+
+
+---
+
 ## Tech stack
 
 **Language**
@@ -113,7 +157,7 @@ cd ../frontend
 npm install
 ```
 
-### 3) Start the PostgreSQL database (Docker)
+### 4) Start the PostgreSQL database (Docker)
 
 Make sure **Docker Desktop** is started, then run:
 
@@ -122,14 +166,14 @@ cd ../database
 docker compose up -d
 ```
 
-### 4) Start the backend
+### 5) Start the backend
 
 ```bash
 cd ../backend
 npm start
 ```
 
-### 5) Start the frontend
+### 6) Start the frontend
 
 Open a second terminal and run:
 
@@ -138,13 +182,13 @@ cd frontend
 npm start
 ```
 
-### 6) Open the app
+### 7) Open the app
 
 - Open `http://localhost:4200` in your browser. 
 
 - Switch to a mobile device view in your browser dev tools (recommended: **iPhone 12 Pro**).
 
-### 7) How to stop everything
+### 8) How to stop everything
 
 - Stop frontend/backend: press `Ctrl + C` in each terminal
 
