@@ -97,16 +97,23 @@ The database setup is defined in:
 
 ### 1) Clone the repository
 
- ```bash
-   go run main.go -file <path_to_graph_file> -algo <cmsa|greedy-prim|greedy-avg|exact> -root <int> -budget <int> [more flags]
-   ```
-   or:
+### 2) Stay in the `scooter-app/` directory of the project.
 
-   ```bash
-   go run main.go -file <path_to_graph_file> -algo <cmsa|greedy-prim|greedy-avg|exact> -root <int> -budget_pct <0..1> [more flags]
-   ```
+### 3) Install dependencies
 
-1. Stay in the `scooter-app/` directory of the project.
+Backend:
+
+```bash
+cd backend
+npm install
+```
+
+Frontend:
+```bash
+cd frontend
+npm install
+```
+
 
 2. Run the following command to run a selected algorithm and print the results.
 
