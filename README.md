@@ -34,7 +34,7 @@ You can watch the scooter app demo on YouTube: click [here](https://youtu.be/JZ8
 
 ## Table of Contents
 
-This README provides an overview of the project, tech stack & dependencies, setup instructions, how to run the app, and my individual contributions.
+This README provides an overview of the project, describes the technologies used, lists the requirements needed to run the app, and explains how to set up and start it locally. It also includes the payment method accounts and database access information, shows the database schema, presents the code architecture via a class diagram, and summarizes my individual contributions.
 
 1. [Project overview](#project-overview)  
 2. [Tech stack](#tech-stack)  
@@ -78,6 +78,7 @@ The goal of this project was to implement a mobile-first scooter rental web appl
 - Payments (view/add/delete payment methods)
 - Options (change currency, distance unit, speed unit)
 - Statistics (user rental stats such as total rentals, total time, total spend, distance)
+
 
 ### Project Process
 
