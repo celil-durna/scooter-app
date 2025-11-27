@@ -255,7 +255,7 @@ Nicht alle Accounts funktionieren - manche Accounts können Fehler verursachen, 
 
 ---
 
-## Architecture: Class Diagram
+## Architecture: Class Diagram <a id="architecture-class-diagram"></a>
 
 <p align="center">
   <img src="soft_eng_models/class_diagram.png" alt="Class diagram" width="92%">
