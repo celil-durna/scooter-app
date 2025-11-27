@@ -247,7 +247,7 @@ Nicht alle Accounts funktionieren - manche Accounts können Fehler verursachen, 
 
 ### Schema
 <p align="center">
-  <img src="soft_eng_models/database_schema.png" alt="Database schema" width="80%">
+  <img src="soft_eng_models/database_schema.png" alt="Database schema" width="90%">
 </p>
 
 
