@@ -66,24 +66,25 @@ The goal of this project was to implement a mobile-first scooter rental web appl
 
 **4) Booking & payments**
 - Book a scooter (select rental duration, confirm booking)
-- Add and manage payment methods (e.g., bachelorcard / HCPal / SWPsafe)
+- Add and manage payment methods (e.g., BachelorCard / HCIPal / SWPSafe)
 
-**5) Reviews**
-  - Write reviews and view existing reviews (including helpful/like counter)
+**5) Bookings overview**
+- Current and past bookings overview
 
 **6) Settings**
-  - Profile (view/edit user data, change password)
-  - Payments (manage stored payment methods)
-  - Options (currency, distance unit, speed unit)
-  - Statistics (user rental stats such as total rentals, total time, total spend, distance)
+- Profile (view/edit user data, change password)
+- Payments (view/add/delete payment methods)
+- Options (change currency, distance unit, speed unit)
+- Statistics (user rental stats such as total rentals, total time, total spend, distance)
 
 ### Project Process
 
-We worked with an **agile Scrum process** (user stories, iterative sprints) and based the UI/UX on a provided **Figma design** as orientation.
+We used a provided **Figma design** as UX design orientation and implemented the project in a team of five students following **agile Scrum** with **user stories**, **weekly Scrum meetings** and **sprint meetings** (including planning, reviews, retrospectives).  
+Tasks were coordinated and tracked using **GitLab Issues** and the **Issue Boards**.
 
-- Figma UX design: click [here](https://www.figma.com/design/wx6yeViEW4xeIZXcdmYUSC/Design---SWP24?node-id=0-1&p=f)
+- UX design (Figma): click [here](https://www.figma.com/design/wx6yeViEW4xeIZXcdmYUSC/Design---SWP24?node-id=0-1&p=f)
 
-- Miro User stories: click [here](https://miro.com/app/board/uXjVKYA4pJ8=/)
+- User stories (Miro): click [here](https://miro.com/app/board/uXjVKYA4pJ8=/)
 
 
 ---
