@@ -206,12 +206,12 @@ npm start
 
 ## Payment method accounts 
 
-Not all accounts work - some accounts may cause errors, that the server must handle.
+Not all accounts work — some accounts may cause errors that the server must handle.
 
 ### BachelorCard
 
-| Name   | cardNumber | securityCode | expirationDate (MM/YY) | Note |
-| ------ | ---------- | ------------ | ---------------------- | ---- | 
+| Name | cardNumber | securityCode | expirationDate (MM/YY) | Note |
+| ---- | ---------- | ------------ | ---------------------- | ---- | 
 | Paul Milgramm | `4485-5420-1334-7098` | `000` | `4/44` | "Normal" card |
 | Petra Heisenberg | `4556-0108-9131-6241` | `123` | `3/33` | No money on the credit card |
 | Benjamin Schneider | `1010-1010-1010-1014` | `101` | `10/10` | Expired card (valid only until 2010) |
@@ -219,8 +219,8 @@ Not all accounts work - some accounts may cause errors, that the server must han
 
 ### HCIPal
 
-| accountName | accountPassword | Notiz |
-| ---------- | ------------ | ------ | 
+| accountName | accountPassword | Note |
+| ----------- | --------------- | ---- | 
 | `paul@milgram.de` | `zJac6Em^q7JrG@w!FMf4@` | "Normal" account |
 | `b.schneider@gov.us` | `*REc#YbCMj6WaWmksYm9*` | "Normal" account |
 | `petra@heisenberg.eu` | `6uTQu8DhqXVz!!fXpGcD5` | No money available on this account |
@@ -228,12 +228,12 @@ Not all accounts work - some accounts may cause errors, that the server must han
 
 ### SWPSafe
 
-| swpCode | Notiz |
-| ---------- | ------ | 
-| `y^t@y7#uMYu@` | "Normale" Karte |
-| `^iexa&8#53iE` | Kein Geld mehr verfügbar |
-| `Ms7wa#%@^9Xi` | "Normale" Karte |
-| `k@8NqfLJ%Bx9` | Kann nur kleinere Summen (<10) bezahlen |
+| swpCode | Note |
+| ------- | ---- | 
+| `y^t@y7#uMYu@` | "Normal" card |
+| `^iexa&8#53iE` | No money available |
+| `Ms7wa#%@^9Xi` | "Normal" card |
+| `k@8NqfLJ%Bx9` | Can only pay small amounts (<10) |
 
 
 
