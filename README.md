@@ -82,7 +82,7 @@ The goal of this project was to implement a mobile-first scooter rental web appl
 
 ### Project Process
 
-We used a provided **Figma design** as UX design orientation and implemented the project in a team of five students following **Scrum (agile)** with **user stories**, **weekly Scrum meetings** and **sprint meetings** (including reviews, retrospectives and  planning).  
+We used a provided **Figma design** as UX design orientation and implemented the project in a team of five students following **Scrum (agile)** with **user stories**, **weekly Scrum meetings** and **Sprint meetings** (including reviews, retrospectives and  planning).  
 Tasks were coordinated and tracked using **GitLab Issues** and the **Issue Boards**.
 
 - UX design (Figma): click [here](https://www.figma.com/design/wx6yeViEW4xeIZXcdmYUSC/Design---SWP24?node-id=0-1&p=f)
@@ -206,25 +206,25 @@ npm start
 
 ## Payment method accounts 
 
-Nicht alle Accounts funktionieren - manche Accounts können Fehler verursachen, die vom Server behandelt werden müssen!
+Not all accounts work - some accounts may cause errors, that the server must handle.
 
 ### BachelorCard
 
-| Name   | cardNumber | securityCode | expirationDate (MM/YY) | Notiz |
-| ------ | ---------- | ------------ | ---------------------- | ------ | 
-| Paul Milgramm | `4485-5420-1334-7098` | `000` | `4/44` | "Normale" Karte |
-| Petra Heisenberg | `4556-0108-9131-6241` | `123` | `3/33` | Kein Geld auf der Kreditkarte |
-| Benjamin Schneider | `1010-1010-1010-1014` | `101` | `10/10` | Abgelaufene Karte (nur bis 2010 gültig) |
-| Dagmar Baumann | `0000-0000-0000-0000` | `350` | `1/23` | Kann nur kleinere Summen (<10) bezahlen |
+| Name   | cardNumber | securityCode | expirationDate (MM/YY) | Note |
+| ------ | ---------- | ------------ | ---------------------- | ---- | 
+| Paul Milgramm | `4485-5420-1334-7098` | `000` | `4/44` | "Normal" card |
+| Petra Heisenberg | `4556-0108-9131-6241` | `123` | `3/33` | No money on the credit card |
+| Benjamin Schneider | `1010-1010-1010-1014` | `101` | `10/10` | Expired card (valid only until 2010) |
+| Dagmar Baumann | `0000-0000-0000-0000` | `350` | `1/23` | Can only pay small amounts (<10) |
 
 ### HCIPal
 
 | accountName | accountPassword | Notiz |
 | ---------- | ------------ | ------ | 
-| `paul@milgram.de` | `zJac6Em^q7JrG@w!FMf4@` | "Normaler" Account |
-| `b.schneider@gov.us` | `*REc#YbCMj6WaWmksYm9*` | "Normaler" Account |
-| `petra@heisenberg.eu` | `6uTQu8DhqXVz!!fXpGcD5` | Kein Geld auf diesem Account |
-| `hcipal@baumann.de` | `TQxeqbztPAQvopE*Bi9E*` | Kann nur kleinere Summen (<10) bezahlen |
+| `paul@milgram.de` | `zJac6Em^q7JrG@w!FMf4@` | "Normal" account |
+| `b.schneider@gov.us` | `*REc#YbCMj6WaWmksYm9*` | "Normal" account |
+| `petra@heisenberg.eu` | `6uTQu8DhqXVz!!fXpGcD5` | No money available on this account |
+| `hcipal@baumann.de` | `TQxeqbztPAQvopE*Bi9E*` | Can only pay small amounts (<10) |
 
 ### SWPSafe
 
