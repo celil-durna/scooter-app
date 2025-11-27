@@ -41,7 +41,9 @@ This README provides an overview of the project, tech stack & dependencies, setu
 3. [Requirements to run the app](#requirements-to-run-the-app)  
 4. [How to run the app](#how-to-run-the-app)  
 5. [Payment method accounts](#payment-method-accounts) 
-6. [My contributions](#my-contributions)
+6. [Database](#database)
+7. [Architecture: Class Diagram](#architecture:-class-diagram)
+8. [My contributions](#my-contributions)
 
 
 ---
