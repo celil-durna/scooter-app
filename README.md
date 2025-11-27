@@ -79,7 +79,7 @@ The goal of this project was to implement a mobile-first scooter rental web appl
 
 ### Project Process
 
-We used a provided **Figma design** as UX design orientation and implemented the project in a team of five students following **agile Scrum** with **user stories**, **weekly Scrum meetings** and **sprint meetings** (including planning, reviews, retrospectives).  
+We used a provided **Figma design** as UX design orientation and implemented the project in a team of five students following **Scrum (agile)** with **user stories**, **weekly Scrum meetings** and **sprint meetings** (including reviews, retrospectives and  planning).  
 Tasks were coordinated and tracked using **GitLab Issues** and the **Issue Boards**.
 
 - UX design (Figma): click [here](https://www.figma.com/design/wx6yeViEW4xeIZXcdmYUSC/Design---SWP24?node-id=0-1&p=f)
@@ -235,6 +235,24 @@ Nicht alle Accounts funktionieren - manche Accounts können Fehler verursachen, 
 
 
 ---
+
+## Database
+
+### Access (local)
+- Host: `localhost`
+- Port: `5432`
+- Database: `swp`
+- User: `admin`
+- Password: `gruppe3`
+
+### Schema
+<p align="center">
+  <img src="soft_eng_models/database_schema.svg" alt="Database schema" width="900">
+</p>
+
+
+
+
 
 ## My contributions
 
