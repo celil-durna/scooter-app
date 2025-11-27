@@ -251,8 +251,16 @@ Nicht alle Accounts funktionieren - manche Accounts können Fehler verursachen, 
 </p>
 
 
+---
+
+## Architecture: Class Diagram
+
+<p align="center">
+  <img src="soft_eng_models/class_diagram.png" alt="Class diagram" width="92%">
+</p>
 
 
+---
 
 ## My contributions
 
